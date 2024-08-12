@@ -1,0 +1,293 @@
+
+:root {
+--primary-color: #f8d7da;
+--secondary-color: #ffeef0;
+--accent-color: #d6336c;
+--text-color: #333;
+--bg-color: #fff;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Poppins', sans-serif;
+color: var(--text-color);
+background-color: var(--bg-color);
+line-height: 1.6;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+header {
+background-color: var(--primary-color);
+padding: 20px 0;
+position: fixed;
+width: 100%;
+z-index: 1000;
+transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+background-color: rgba(248, 215, 218, 0.9);
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo {
+display: flex;
+align-items: center;
+font-family: 'Playfair Display', serif;
+font-size: 24px;
+color: var(--accent-color);
+text-decoration: none;
+}
+
+.logo svg {
+width: 40px;
+height: 40px;
+margin-right: 10px;
+}
+
+nav ul {
+display: flex;
+list-style: none;
+}
+
+nav ul li {
+margin-left: 30px;
+}
+
+nav ul li a {
+color: var(--accent-color);
+text-decoration: none;
+font-weight: 600;
+transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+color: #b82d5e;
+}
+
+.hero {
+background: linear-gradient(rgba(248, 215, 218, 0.9), rgba(255, 238, 240, 0.9));
+height: 100vh;
+display: flex;
+align-items: center;
+text-align: center;
+}
+
+.hero-content {
+max-width: 800px;
+margin: 0 auto;
+}
+
+.hero h1 {
+font-size: 48px;
+margin-bottom: 20px;
+color: var(--accent-color);
+}
+
+.hero p {
+font-size: 18px;
+margin-bottom: 30px;
+}
+
+.btn {
+display: inline-block;
+background-color: var(--accent-color);
+color: #fff;
+padding: 12px 30px;
+border-radius: 30px;
+text-decoration: none;
+font-weight: 600;
+transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+background-color: #b82d5e;
+}
+
+.section {
+padding: 80px 0;
+}
+
+.section-title {
+text-align: center;
+font-size: 36px;
+margin-bottom: 40px;
+color: var(--accent-color);
+}
+
+.services {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 30px;
+}
+
+.service-card {
+background-color: var(--secondary-color);
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+transform: translateY(-5px);
+}
+
+.service-card img {
+width: 100%;
+height: 200px;
+object-fit: cover;
+}
+
+.service-card-content {
+padding: 20px;
+}
+
+.service-card h3 {
+font-size: 24px;
+margin-bottom: 10px;
+color: var(--accent-color);
+}
+
+.gallery-carousel {
+position: relative;
+overflow: hidden;
+}
+
+.swiper-container {
+width: 100%;
+padding-top: 50px;
+padding-bottom: 50px;
+}
+
+.swiper-slide {
+background-position: center;
+background-size: cover;
+width: 300px;
+height: 300px;
+}
+
+.swiper-slide img {
+display: block;
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 10px;
+}
+
+#contact {
+background-color: var(--secondary-color);
+}
+
+.contact-form {
+max-width: 600px;
+margin: 0 auto;
+}
+
+.form-group {
+margin-bottom: 20px;
+}
+
+.form-group label {
+display: block;
+margin-bottom: 5px;
+font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+width: 100%;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 5px;
+}
+
+.social-links {
+display: flex;
+justify-content: center;
+margin-top: 30px;
+}
+
+.social-links a {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 40px;
+height: 40px;
+background-color: var(--accent-color);
+color: #fff;
+border-radius: 50%;
+margin: 0 10px;
+transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+background-color: #b82d5e;
+}
+
+footer {
+background-color: var(--primary-color);
+color: var(--text-color);
+text-align: center;
+padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+.hero h1 {
+font-size: 36px;
+}
+
+.hero p {
+font-size: 16px;
+}
+
+.section-title {
+font-size: 28px;
+}
+
+.services {
+grid-template-columns: 1fr;
+}
+
+nav ul {
+display: none;
+flex-direction: column;
+position: absolute;
+top: 100%;
+left: 0;
+width: 100%;
+background-color: var(--primary-color);
+padding: 20px 0;
+}
+
+nav ul.show {
+display: flex;
+}
+
+nav ul li {
+margin: 10px 0;
+}
+
+.menu-toggle {
+display: block;
+font-size: 24px;
+color: var(--accent-color);
+cursor: pointer;
+}
+}/* ... (previous CSS remains unchanged) ... */
